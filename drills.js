@@ -29,14 +29,18 @@ function main() {
 //SearchTree:
 //       3
 //     /   \
-//     1    6
+//     1    4
 //     \    \
-//      2    4
+//      2    6
 //          / \
 //          5  9
 //            /
 //           7
 
+
+//store first = 3 
+//store second = 1
+//store third = 2
 function isItBST(node){
   if(node == null) {
     return true;
@@ -48,4 +52,19 @@ function isItBST(node){
 
 main();
 
-
+//largest -1 second 
+// counter >=3
+// find 3
+// node.right first then left
+//each recursion decrements by 1
+//
+//write a function that takes node as an argument
+//and stores the value depending on a > equation
+//changes the stored value to the highest value
+//   3
+//  /\
+// 1  4
+function thirdLargest(node){
+if (node == null)
+return;
+}
