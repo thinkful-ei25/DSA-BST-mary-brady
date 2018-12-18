@@ -5,29 +5,29 @@ Create a Binary Search Tree called BST and insert 3, 1, 4, 6, 9, 2, 5, 7 to your
 */
 
 class BST {
-  constructor(key = null, value = null, parent = null) {
+  constructor(key = null, parent = null) {
     this.key = key;
-    this.value = value;
+    this.value = key;
     this.parent = parent;
     this.left = null;
     this.right = null;
   }
 
-  insert(key, value) {
+  insert(key) {
     if (this.key == null) {
       this.key = key;
-      this.value = value;
+      this.value = key;
     } else if (key < this.key) {
       if (this.left == null) {
-        this.left = new BST(key, value, this);
+        this.left = new BST(key, this);
       } else {
-        this.left.insert(key, value);
+        this.left.insert(key);
       }
     } else {
       if (this.right == null) {
-        this.right = new BST(key, value, this);
+        this.right = new BST(key,this);
       } else {
-        this.right.insert(key, value);
+        this.right.insert(key);
       }
     }
   }
@@ -49,7 +49,7 @@ class BST {
       if (this.left && this.right) {
         const successor = this.right._findMin();
         this.key = successor.key;
-        this.value = successor.value;
+        this.value = successor.key;
         successor.remove(successor.key);
       }
       else if (this.left) {
