@@ -19,28 +19,33 @@ function main() {
   searchTree.insert(2);
   searchTree.insert(5);
   searchTree.insert(7);
-  console.log(searchTree);
+  // console.log(searchTree);
 
-  console.log(heightOf(searchTree))
+  console.log('The height of the searchTree is ' + heightOf(searchTree))
+  console.log('The search tree you entered is a BST: ' + isItBST(searchTree));
 }
 
-// 3,1,4,6,9,2,5,
+// 3,1,4,6,9,2,5,7
 //SearchTree:
 //       3
 //     /   \
-//     1    4
+//     1    6
 //     \    \
-//      2    6
+//      2    4
 //          / \
 //          5  9
+//            /
+//           7
 
-//input st
-//if null return -1
-//have count
-//else return 1+ Math.Max(heightofBSTfunction(node.left, node.right));
-//go down one side and save variable for count on left
-//go down the right side and save variable for count on right
-//height is left count or right count dependant on which is larger
-
+function isItBST(node){
+  if(node == null) {
+    return true;
+  }
+  if((node.left && node.left.value > node.value)) return false;
+  if(node.right && node.right.value < node.value) return false;
+  return (isItBST(node.left) || isItBST(node.right));
+}
 
 main();
+
+
