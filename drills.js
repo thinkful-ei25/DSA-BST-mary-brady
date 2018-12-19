@@ -83,3 +83,21 @@ main();
 //   3
 //  /\
 // 1  4
+
+
+// function nth(tree, state) {
+//   if(tree.right){
+//     nth(tree.right, state);
+//     if(state.results){
+//       return;
+//     }
+//   }
+//   if(!--state.n){
+//     //found
+//     state.results = tree.key;
+//     return;
+//   }
+//   if(tree.left) {
+//     nth(tree.left, state);
+//   }
+// }
